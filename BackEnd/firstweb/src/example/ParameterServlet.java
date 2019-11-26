@@ -8,28 +8,26 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/ten")
-public class TenServlet extends HttpServlet {
+@WebServlet("/param")
+public class ParameterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        int value = Integer.parseInt(request.getParameter("value"));
-        out.print("<html>");
-        out.print("<head>");
-        out.print("<meta charset=utf-8>");
-        out.print("<h1>1from " + value + "to</h1>");
-        out.print("</head>");
-        out.print("<body>");
-        out.print("한글테스트");
-        for(int i = 1; i <= value; i++){
-            out.print(i + "<br>");
-        }
-        out.print("</body>");
-        out.print("</html>");
+        out.println("<html>");
+        out.println("<head><title>form</title></head>");
+        out.println("<body>");
+        String name = request.getParameter("name");
+        String age = request.getParameter("age");
+
+        out.println("name : " + name + "<br>");
+        out.println("age : " +age + "<br>");
+
+        out.println("</body>");
+        out.println("</html>");
     }
 }
