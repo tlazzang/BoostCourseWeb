@@ -1,0 +1,43 @@
+#header {
+    background-color: lightgrey;
+    height: 100px;
+}
+#nav{
+    background-color: beige;
+    color: white;
+    height: 100px;
+    text-align: right;
+}
+#section {
+    height: 600px;
+    padding: 10px;
+}
+#section > section{
+    margin-top: 100px;
+    text-align: left;
+}
+img {
+    height: 400px;
+    width: 400px;
+}
+#footer {
+    background-color: #ffcc00;
+    height: 100px;
+    clear: both;
+}
+.nav-square-box{
+    color: white;
+    background-color: #123456;
+    margin: 8px;
+    alignment: center;
+}
+#nav > li{
+    display: inline;
+}
+#header,
+#section,
+#footer {
+    align-items: center;
+    alignment: center;
+    text-align: center;
+}
